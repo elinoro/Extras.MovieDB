@@ -7,9 +7,12 @@ const apiKey = '76c3be5a646cbc1177651e80edcb2529';
 const url = 'https://api.themoviedb.org/3';
 const nowPlayingUrl = `${url}/movie/now_playing`;
 const topRatedUrl = `${url}/movie/top_rated`;
-const movieUrl = `${url}/movie`;
+// const movieUrl = `${url}/movie/+{movie_id}`;
 const genreUrl = `${url}/genre/movie/list`;
 const personUrl = `${url}/trending/person/week`;
+const upcomingUrl = `${url}/movie/upcoming`;
+// const recommendationsUrl = `${url}/movie/{movie_id}/recommendations`;
+const populargUrl = `${url}/movie/popular`;
 
 // class NowPlayingTMDB extends React.Component {
 //   componentDidMount(){

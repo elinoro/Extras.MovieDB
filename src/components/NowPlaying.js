@@ -1,17 +1,14 @@
 import React from 'react';
 import { connect } from "react-redux" ;
 import nowPlaying from '../redux/actions/nowPlaying';
+import Carousel from './Carousel';
 
-class NowPlaying extends React.Component {
-  componentDidMount(){
-    
-  }
-
-  render(){
-    return(
-     <div><p>blahblah</p></div>
-    )
-  }
+const NowPlaying = () => {
+  return(
+    <div className='page'>
+      <Carousel />
+    </div>
+  )
 };
 
 const mapStateToDispatch = {

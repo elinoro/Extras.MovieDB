@@ -1,13 +1,14 @@
 import React from 'react';
 // import { connect } from "react-redux" ;
 // import nowPlaying from '../redux/actions/nowPlaying';
+import Carousel from './Carousel';
 
-const Search = () => {
+const Popular = () => {
   return(
     <div className='page'>
-      <h3>Search</h3>
+      <Carousel />
     </div>
   )
 };
 
-export default Search;
+export default Popular;

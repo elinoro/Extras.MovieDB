@@ -2,12 +2,12 @@ import React from 'react';
 // import { connect } from "react-redux" ;
 // import nowPlaying from '../redux/actions/nowPlaying';
 
-const Search = () => {
+const Person = () => {
   return(
-    <div className='page'>
-      <h3>Search</h3>
+    <div>
+      <h3>Person</h3>
     </div>
   )
 };
 
-export default Search;
+export default Person;
