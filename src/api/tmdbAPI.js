@@ -1,7 +1,7 @@
-// import React from 'react';
+import React from 'react';
 import axios from 'axios';
-// import { connect } from "react-redux" ;
-// import nowPlaying from '../redux/actions/nowPlaying';
+import { connect } from "react-redux" ;
+import nowPlaying from '../redux/actions/nowPlaying';
 
 const apiKey = '76c3be5a646cbc1177651e80edcb2529';
 const url = 'https://api.themoviedb.org/3';
@@ -18,7 +18,8 @@ const populargUrl = `${url}/movie/popular`;
 //   componentDidMount(){
 
 // now playing -----------------------------------------------------
-export const fetchNowPlaying = axios.get(nowPlayingUrl, {
+export const fetchNowPlaying = () => {
+  axios.get(nowPlayingUrl, {
   params: {
     api_key: apiKey,
     language: 'en_US',
@@ -27,9 +28,10 @@ export const fetchNowPlaying = axios.get(nowPlayingUrl, {
 })
 .then(res => {
   console.log(res.data)
-  return this.props.nowPlayingMovies(res.data)
-})
-console.log(fetchNowPlaying)
+  return res.data;
+})}
+
+// console.log(fetchNowPlaying)
     
   // }
 
@@ -47,43 +49,43 @@ console.log(fetchNowPlaying)
 // export default connect (null, mapStateToDispatch)(NowPlayingTMDB);
 
 // top rated -----------------------------------------------------
-export const fetchTopRated = axios.get(topRatedUrl, {
-  params: {
-    api_key: apiKey,
-    language: 'en_US',
-    page: 1
-  }
-})
-.then(res => {
-  console.log(res.data)
- return this.props.topRatedMovies(res.data)
-})
-console.log(fetchTopRated)
+// export const fetchTopRated = axios.get(topRatedUrl, {
+//   params: {
+//     api_key: apiKey,
+//     language: 'en_US',
+//     page: 1
+//   }
+// })
+// .then(res => {
+//   console.log(res.data)
+//  return this.props.topRatedMovies(res.data)
+// })
+// console.log(fetchTopRated)
 
-// genre -----------------------------------------------------
-export const fetchGenre = axios.get(genreUrl, {
-  params: {
-    api_key: apiKey,
-    language: 'en_US',
-    page: 1
-  }
-})
-.then(res => {
-  console.log(res.data)
- return this.props.genreMovies(res.data)
-})
-console.log(fetchGenre)
+// // genre -----------------------------------------------------
+// export const fetchGenre = axios.get(genreUrl, {
+//   params: {
+//     api_key: apiKey,
+//     language: 'en_US',
+//     page: 1
+//   }
+// })
+// .then(res => {
+//   console.log(res.data)
+//  return this.props.genreMovies(res.data)
+// })
+// console.log(fetchGenre)
 
-// person -----------------------------------------------------
-export const fetchPerson = axios.get(personUrl, {
-  params: {
-    api_key: apiKey,
-    language: 'en_US',
-    page: 1
-  }
-})
-.then(res => {
-  console.log(res.data)
- return this.props.person(res.data)
-})
-console.log(fetchPerson)
+// // person -----------------------------------------------------
+// export const fetchPerson = axios.get(personUrl, {
+//   params: {
+//     api_key: apiKey,
+//     language: 'en_US',
+//     page: 1
+//   }
+// })
+// .then(res => {
+//   console.log(res.data)
+//  return this.props.person(res.data)
+// })
+// console.log(fetchPerson)
