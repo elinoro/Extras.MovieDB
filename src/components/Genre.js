@@ -1,13 +1,26 @@
 import React from 'react';
-// import { connect } from "react-redux" ;
-// import nowPlaying from '../redux/actions/nowPlaying';
+import { connect } from "react-redux" ;
+import genre from '../redux/actions/genre';
+import { fetchGenre } from '../api/tmdbAPI';
+import Carousel from './Carousel';
 
-const Genre = () => {
-  return(
-    <div>
-      <h3>Genre</h3>
-    </div>
-  )
+class Genre extends React.Component {
+  componentDidMount(){
+    const fetch = fetchGenre();
+    console.log(fetch);
+  }
+  render(){
+    return(
+      <div className='page'>
+        <Carousel />
+      </div>
+    )
+  }
+
 };
 
-export default Genre;
+const mapStateToDispatch = {
+  genres: (movies) => genre(movies),
+}
+
+export default connect(null, mapStateToDispatch)(Genre);

@@ -1,21 +1,19 @@
-import React from 'react';
 import axios from 'axios';
-import { connect } from "react-redux" ;
-import nowPlaying from '../redux/actions/nowPlaying';
 
 const apiKey = '76c3be5a646cbc1177651e80edcb2529';
 const url = 'https://api.themoviedb.org/3';
+
 const nowPlayingUrl = `${url}/movie/now_playing`;
 const topRatedUrl = `${url}/movie/top_rated`;
-// const movieUrl = `${url}/movie/+{movie_id}`;
+const popularUrl = `${url}/movie/popular`;
 const genreUrl = `${url}/genre/movie/list`;
 const personUrl = `${url}/trending/person/week`;
 const upcomingUrl = `${url}/movie/upcoming`;
-// const recommendationsUrl = `${url}/movie/{movie_id}/recommendations`;
-const populargUrl = `${url}/movie/popular`;
+const movieUrl = `${url}/movie/464052`;
 
-// class NowPlayingTMDB extends React.Component {
-//   componentDidMount(){
+// const recommendationsUrl = `${url}/movie/{movie_id}/recommendations`;
+
+
 
 // now playing -----------------------------------------------------
 export const fetchNowPlaying = () => {
@@ -31,61 +29,86 @@ export const fetchNowPlaying = () => {
   return res.data;
 })}
 
-// console.log(fetchNowPlaying)
-    
-  // }
-
-//   render(){
-//     return(
-//      <div><p>blahblah</p></div>
-//     )
-//   }
-// };
-
-// const mapStateToDispatch = {
-//   nowPlayingMovies: (movies) => nowPlaying(movies),
-// }
-
-// export default connect (null, mapStateToDispatch)(NowPlayingTMDB);
-
 // top rated -----------------------------------------------------
-// export const fetchTopRated = axios.get(topRatedUrl, {
-//   params: {
-//     api_key: apiKey,
-//     language: 'en_US',
-//     page: 1
-//   }
-// })
-// .then(res => {
-//   console.log(res.data)
-//  return this.props.topRatedMovies(res.data)
-// })
-// console.log(fetchTopRated)
+export const fetchTopRated = () => {
+  axios.get(topRatedUrl, {
+  params: {
+    api_key: apiKey,
+    language: 'en_US',
+    page: 1
+  }
+})
+.then(res => {
+  console.log(res.data)
+  return res.data;
+})}
 
 // // genre -----------------------------------------------------
-// export const fetchGenre = axios.get(genreUrl, {
-//   params: {
-//     api_key: apiKey,
-//     language: 'en_US',
-//     page: 1
-//   }
-// })
-// .then(res => {
-//   console.log(res.data)
-//  return this.props.genreMovies(res.data)
-// })
-// console.log(fetchGenre)
+export const fetchGenre = () => {
+  axios.get(genreUrl, {
+  params: {
+    api_key: apiKey,
+    language: 'en_US',
+    page: 1
+  }
+})
+.then(res => {
+  console.log(res.data)
+  return res.data;
+})}
 
 // // person -----------------------------------------------------
-// export const fetchPerson = axios.get(personUrl, {
-//   params: {
-//     api_key: apiKey,
-//     language: 'en_US',
-//     page: 1
-//   }
-// })
-// .then(res => {
-//   console.log(res.data)
-//  return this.props.person(res.data)
-// })
-// console.log(fetchPerson)
+export const fetchPerson = () => {
+  axios.get(personUrl, {
+  params: {
+    api_key: apiKey,
+    language: 'en_US',
+    page: 1
+  }
+})
+.then(res => {
+  console.log(res.data)
+  return res.data;
+})}
+
+// // popular -----------------------------------------------------
+export const fetchPopular = () => {
+  axios.get(popularUrl, {
+  params: {
+    api_key: apiKey,
+    language: 'en_US',
+    page: 1
+  }
+})
+.then(res => {
+  console.log(res.data)
+  return res.data;
+})}
+
+// // upcoming -----------------------------------------------------
+export const fetchUpcoming = () => {
+  axios.get(upcomingUrl, {
+  params: {
+    api_key: apiKey,
+    language: 'en_US',
+    page: 1
+  }
+})
+.then(res => {
+  console.log(res.data)
+  return res.data;
+})}
+
+// random -----------------------------------------------------
+export const fetchRandom = () => {
+  axios.get(movieUrl, {
+  params: {
+    api_key: apiKey,
+    language: 'en_US',
+    page: 1
+  }
+})
+.then(res => {
+  console.log(res.data)
+  return res.data;
+})}

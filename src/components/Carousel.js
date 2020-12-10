@@ -4,17 +4,16 @@ import MovieCard from './MovieCard';
 
 function Carousel1() {
 
-    const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1
-  };
+  const breakPoints = [
+    // { width: 1, itemsToShow: 1 },
+    // { width: 550, itemsToShow: 2, itemsToScroll: 2 },
+    // { width: 768, itemsToShow: 3 },
+    { width: 1200, itemsToShow: 5, itemsToScroll: 4 }
+  ];
 
   return (
     <div>
-      <Carousel>
+      <Carousel breakPoints={breakPoints}>
         <MovieCard>1</MovieCard>
         <MovieCard>2</MovieCard>
         <MovieCard>3</MovieCard>

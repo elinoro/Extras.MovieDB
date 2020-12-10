@@ -1,14 +1,26 @@
 import React from 'react';
-// import { connect } from "react-redux" ;
-// import nowPlaying from '../redux/actions/nowPlaying';
+import { connect } from "react-redux" ;
+import popular from '../redux/actions/popular';
+import { fetchPopular } from '../api/tmdbAPI';
 import Carousel from './Carousel';
 
-const Popular = () => {
-  return(
-    <div className='page'>
-      <Carousel />
-    </div>
-  )
+class Popular extends React.Component {
+  componentDidMount(){
+    const fetch = fetchPopular();
+    console.log(fetch);
+  }
+  render(){
+    return(
+      <div className='page'>
+        <Carousel />
+      </div>
+    )
+  }
+
 };
 
-export default Popular;
+const mapStateToDispatch = {
+  popularMovies: (movies) => popular(movies),
+}
+
+export default connect(null, mapStateToDispatch)(Popular);
